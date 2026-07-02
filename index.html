@@ -3,104 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pnsl Shop</title>
+<title>PNSL SHOP</title>
 
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f8f8f8;
-}
-
-header{
-background:#ff4f81;
-color:white;
-padding:20px;
-text-align:center;
-font-size:28px;
-font-weight:bold;
-}
-
-.banner{
-padding:40px;
-text-align:center;
-background:white;
-}
-
-.banner h1{
-margin:0;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-padding:20px;
-}
-
-.card{
-background:white;
-border-radius:10px;
-padding:15px;
-text-align:center;
-box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
-
-.card img{
-width:100%;
-border-radius:10px;
-}
-
-button{
-background:#ff4f81;
-color:white;
-border:none;
-padding:10px 20px;
-border-radius:6px;
-cursor:pointer;
-}
-
-footer{
-text-align:center;
-padding:20px;
-color:#666;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
 <header>
-Pnsl Shop
+
+<div class="logo">🎀 PNSL SHOP</div>
+
+<div class="search">
+<input type="text" placeholder="🔍 ค้นหาสินค้า...">
+</div>
+
 </header>
 
-<div class="banner">
-<h1>ยินดีต้อนรับ</h1>
-<p>ร้านpanisalaShop เสื้อผ้าแฟชั่นนำเข้าทุกสไตล์</p>
-</div>
+<section class="banner">
 
-<div class="products">
+<h1>Fashion & Beauty</h1>
+
+<p>🩷 สินค้าใหม่ทุกวัน | 🚚 จัดส่งทั่วประเทศ</p>
+
+<a href="#products" class="btn">
+เลือกซื้อสินค้า
+</a>
+
+</section>
+
+<section class="category">
+
+<button>ทั้งหมด</button>
+
+<button>สไตล์เดรสแฟชั่น</button>
+
+<button>จั้มกางเกง/สั้น-ยาว</button>
+
+<button>ชุดเซ็ต</button>
+
+<button>เสื้อ</button>
+
+<button>กางเกง/กระโปรง</button>
+
+</section>
+
+<section class="products" id="products">
 
 <div class="card">
-<img src="https://via.placeholder.com/300x350">
+
+<img src="https://picsum.photos/300/300?1">
+
+<h3>เสื้อแฟชั่น</h3>
+
+<div class="price">฿290</div>
+
+<a href="#" class="buy">สั่งซื้อ</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/300/300?2">
+
+<h3>ชุดแฟชั่น</h3>
+
+<div class="price">฿490</div>
+
+<a href="#" class="buy">สั่งซื้อ</a>
+
+</div>
+
+<div class="card">
+
+<img src="https://picsum.photos/300/300?3">
+
 <h3>เดรสแฟชั่น</h3>
-<p>100 Baht</p>
-<button>เพิ่มลงตะกร้า</button>
-</div>
 
-<div class="card">
-<img src="https://via.placeholder.com/300x350">
-<h3>เสื้อ</h3>
-<p>59 Baht</p>
-<button>เพิ่มลงตะกร้า</button>
-</div>
+<div class="price">119 Baht</div>
+
+<a href="#" class="buy">สั่งซื้อ</a>
 
 </div>
 
-<footer>
-© Pnsl Shop
-</footer>
-
-</body>
-</html>
+</section>
