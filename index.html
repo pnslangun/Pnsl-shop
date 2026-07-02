@@ -3,88 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PNSL SHOP</title>
-
+<title>PNSL CLOTHING 💖</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
 <header>
+  <h1>💖 ᴘɴꜱʟ ꜱʜᴏᴘ</h1>
 
-<div class="logo">🎀 PNSL SHOP</div>
+  <input type="text" id="search" placeholder="🔍 ค้นหาเสื้อผ้า...">
 
-<div class="search">
-<input type="text" placeholder="🔍 ค้นหาสินค้า...">
-</div>
+  <div class="cart-box">
+    🛒 ตะกร้า: <span id="cartCount">0</span>
+    <button onclick="openCart()">ดูตะกร้า</button>
+  </div>
 
+  <div class="banner">🚚 ค่าส่งเริ่มต้น40</div>
 </header>
 
-<section class="banner">
+<!-- CATEGORY -->
+<div class="categories">
+  <button onclick="filterCategory('all')">ทั้งหมด</button>
+  <button onclick="filterCategory('shirt')">เสื้อ</button>
+  <button onclick="filterCategory('pants')">กางเกง</button>
+  <button onclick="filterCategory('dress')">เดรส</button>
+</div>
 
-<h1>Fashion & Beauty</h1>
+<!-- PRODUCTS -->
+<section class="product-grid">
 
-<p>🩷 สินค้าใหม่ทุกวัน | 🚚 จัดส่งทั่วประเทศ</p>
+  <div class="product" data-category="shirt">
+    <h3>เดรสแฟชั่น</h3>
+    <p>119 bath</p>
+    <button onclick="addCart('เสื้อยืด Oversize',199)">เพิ่มลงตะกร้า</button>
+  </div>
 
-<a href="#products" class="btn">
-เลือกซื้อสินค้า
-</a>
+  <div class="product" data-category="shirt">
+    <h3>เสื้อครอปชมพู</h3>
+    <p>159 บาท</p>
+    <button onclick="addCart('เสื้อครอปชมพู',159)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product" data-category="pants">
+    <h3>กางเกงยีนส์</h3>
+    <p>299 บาท</p>
+    <button onclick="addCart('กางเกงยีนส์',299)">เพิ่มลงตะกร้า</button>
+  </div>
+
+  <div class="product" data-category="dress">
+    <h3>เดรสสีชมพูหวาน</h3>
+    <p>349 บาท</p>
+    <button onclick="addCart('เดรสสีชมพูหวาน',349)">เพิ่มลงตะกร้า</button>
+  </div>
 
 </section>
 
-<section class="category">
+<!-- CART -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
 
-<button>ทั้งหมด</button>
+    <h2>🛒 ตะกร้าสินค้า</h2>
+    <div id="cartItems"></div>
 
-<button>สไตล์เดรสแฟชั่น</button>
+    <h3>รวม: <span id="totalPrice">0</span> บาท</h3>
 
-<button>จั้มกางเกง/สั้น-ยาว</button>
+    <button onclick="goToCheckout()">💳 ชำระเงิน</button>
+    <button onclick="closeCart()">ปิด</button>
 
-<button>ชุดเซ็ต</button>
-
-<button>เสื้อ</button>
-
-<button>กางเกง/กระโปรง</button>
-
-</section>
-
-<section class="products" id="products">
-
-<div class="card">
-
-<img src="https://picsum.photos/300/300?1">
-
-<h3>เสื้อแฟชั่น</h3>
-
-<div class="price">฿290</div>
-
-<a href="#" class="buy">สั่งซื้อ</a>
-
+  </div>
 </div>
 
-<div class="card">
+<!-- CHECKOUT -->
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
 
-<img src="https://picsum.photos/300/300?2">
+    <h2>💳 ชำระเงิน + อัปโหลดสลิป</h2>
 
-<h3>ชุดแฟชั่น</h3>
+    <img src="https://via.placeholder.com/200" style="width:100%">
 
-<div class="price">฿490</div>
+    <input type="file" id="slip">
 
-<a href="#" class="buy">สั่งซื้อ</a>
+    <h3>📍 ข้อมูลจัดส่ง</h3>
+    <input id="name" placeholder="ชื่อ">
+    <input id="address" placeholder="ที่อยู่">
+    <input id="phone" placeholder="เบอร์โทร">
 
+    <button onclick="confirmOrder()">ยืนยันสั่งซื้อ</button>
+    <button onclick="closeCheckout()">ปิด</button>
+
+  </div>
 </div>
 
-<div class="card">
-
-<img src="https://picsum.photos/300/300?3">
-
-<h3>เดรสแฟชั่น</h3>
-
-<div class="price">119 Baht</div>
-
-<a href="#" class="buy">สั่งซื้อ</a>
-
+<!-- TRACKING -->
+<div id="trackingBox">
+  📦 เลขพัสดุ: <span id="trackingCode">-</span>
 </div>
 
-</section>
+<script src="script.js"></script>
+</body>
+</html>
