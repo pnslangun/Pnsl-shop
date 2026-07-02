@@ -1,105 +1,334 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PNSL CLOTHING 💖</title>
+
+<title>Pnsl Shop | Fashion Store</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
+<!--================ HEADER ================-->
+
 <header>
-  <h1>💖 ᴘɴꜱʟ ꜱʜᴏᴘ</h1>
 
-  <input type="text" id="search" placeholder="🔍 ค้นหาเสื้อผ้า...">
+<div class="logo">
 
-  <div class="cart-box">
-    🛒 ตะกร้า: <span id="cartCount">0</span>
-    <button onclick="openCart()">ดูตะกร้า</button>
-  </div>
+<img src="assets/logo.png" alt="Pnsl Shop">
 
-  <div class="banner">🚚 ค่าส่งเริ่มต้น40</div>
-</header>
+<h2>Pnsl Shop</h2>
 
-<!-- CATEGORY -->
-<div class="categories">
-  <button onclick="filterCategory('all')">ทั้งหมด</button>
-  <button onclick="filterCategory('shirt')">เสื้อ</button>
-  <button onclick="filterCategory('pants')">กางเกง</button>
-  <button onclick="filterCategory('dress')">เดรส</button>
 </div>
 
-<!-- PRODUCTS -->
-<section class="product-grid">
+<nav>
 
-  <div class="product" data-category="shirt">
-    <h3>เดรสแฟชั่น</h3>
-    <p>119 bath</p>
-    <button onclick="addCart('เสื้อยืด Oversize',199)">เพิ่มลงตะกร้า</button>
-  </div>
+<ul>
 
-  <div class="product" data-category="shirt">
-    <h3>เสื้อครอปชมพู</h3>
-    <p>159 บาท</p>
-    <button onclick="addCart('เสื้อครอปชมพู',159)">เพิ่มลงตะกร้า</button>
-  </div>
+<li><a href="#">หน้าแรก</a></li>
 
-  <div class="product" data-category="pants">
-    <h3>กางเกงยีนส์</h3>
-    <p>299 บาท</p>
-    <button onclick="addCart('กางเกงยีนส์',299)">เพิ่มลงตะกร้า</button>
-  </div>
+<li><a href="#products">สินค้า</a></li>
 
-  <div class="product" data-category="dress">
-    <h3>เดรสสีชมพูหวาน</h3>
-    <p>349 บาท</p>
-    <button onclick="addCart('เดรสสีชมพูหวาน',349)">เพิ่มลงตะกร้า</button>
-  </div>
+<li><a href="#review">รีวิว</a></li>
+
+<li><a href="#contact">ติดต่อ</a></li>
+
+</ul>
+
+</nav>
+
+<div class="header-right">
+
+<div class="search-box">
+
+<input
+type="text"
+id="searchInput"
+placeholder="ค้นหาสินค้า...">
+
+<i class="fa fa-search"></i>
+
+</div>
+
+<button id="cartButton">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span id="cartCount">0</span>
+
+</button>
+
+</div>
+
+</header>
+
+<!--================ HERO ================-->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+
+New Collection
+
+</h1>
+
+<h2>
+
+Fashion For Every Day
+
+</h2>
+
+<p>
+
+แฟชั่นผู้หญิง พร้อมส่งทั่วประเทศ
+
+</p>
+
+<a href="#products" class="shop-btn">
+
+เลือกซื้อสินค้า
+
+</a>
+
+</div>
+
+<div class="hero-right">
+
+<img src="assets/banner.jpg">
+
+</div>
 
 </section>
 
-<!-- CART -->
-<div id="cartModal" class="modal">
-  <div class="modal-content">
+<!--================ SHIPPING ================-->
 
-    <h2>🛒 ตะกร้าสินค้า</h2>
-    <div id="cartItems"></div>
+<section class="shipping">
 
-    <h3>รวม: <span id="totalPrice">0</span> บาท</h3>
+<i class="fa-solid fa-truck-fast"></i>
 
-    <button onclick="goToCheckout()">💳 ชำระเงิน</button>
-    <button onclick="closeCart()">ปิด</button>
+จัดส่งทั่วประเทศ
 
-  </div>
+</section>
+
+<!--================ CATEGORY ================-->
+
+<section class="category">
+
+<h2>
+
+หมวดหมู่สินค้า
+
+</h2>
+
+<div class="category-grid">
+
+<button class="category-btn active">
+
+ทั้งหมด
+
+</button>
+
+<button class="category-btn">
+
+เดรส
+
+</button>
+
+<button class="category-btn">
+
+เสื้อ
+
+</button>
+
+<button class="category-btn">
+
+กางเกง
+
+</button>
+
+<button class="category-btn">
+
+เซต
+
+</button>
+
+<button class="category-btn">
+
+กระโปรง
+
+</button>
+
 </div>
 
-<!-- CHECKOUT -->
-<div id="checkoutModal" class="modal">
-  <div class="modal-content">
+</section>
 
-    <h2>💳 ชำระเงิน + อัปโหลดสลิป</h2>
+<!--================ PRODUCT ================-->
 
-    <img src="https://via.placeholder.com/200" style="width:100%">
+<section id="products">
 
-    <input type="file" id="slip">
+<h2 class="title">
 
-    <h3>📍 ข้อมูลจัดส่ง</h3>
-    <input id="name" placeholder="ชื่อ">
-    <input id="address" placeholder="ที่อยู่">
-    <input id="phone" placeholder="เบอร์โทร">
+สินค้าแนะนำ
 
-    <button onclick="confirmOrder()">ยืนยันสั่งซื้อ</button>
-    <button onclick="closeCheckout()">ปิด</button>
+</h2>
 
-  </div>
+<div id="productContainer"
+class="product-grid">
+
+<!-- Product Card -->
+
+<div class="product-card">
+
+<div class="badge">
+
+NEW
+
 </div>
 
-<!-- TRACKING -->
-<div id="trackingBox">
-  📦 เลขพัสดุ: <span id="trackingCode">-</span>
+<img
+src="assets/products/product1.jpg">
+
+<h3>
+
+ชุดเซต Secret
+
+</h3>
+
+<p class="price">
+
+฿590
+
+</p>
+
+<div class="size">
+
+S / M / L
+
+</div>
+
+<button
+onclick="addCart(1)">
+
+เพิ่มลงตะกร้า
+
+</button>
+
+</div>
+
+<!-- Product Card -->
+
+<div class="product-card">
+
+<div class="badge sale">
+
+SALE
+
+</div>
+
+<img
+src="assets/products/product2.jpg">
+
+<h3>
+
+เดรสหวาน
+
+</h3>
+
+<p class="price">
+
+฿490
+
+</p>
+
+<div class="size">
+
+Free Size
+
+</div>
+
+<button
+onclick="addCart(2)">
+
+เพิ่มลงตะกร้า
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!--================ CART ================-->
+
+<div id="cartDrawer"
+class="cart">
+
+<div class="cart-header">
+
+<h2>
+
+ตะกร้าสินค้า
+
+</h2>
+
+<button onclick="closeCart()">
+
+×
+
+</button>
+
+</div>
+
+<div id="cartItems">
+
+ยังไม่มีสินค้า
+
+</div>
+
+<div class="cart-footer">
+
+<h3>
+
+รวม
+
+<span id="totalPrice">
+
+0
+
+</span>
+
+บาท
+
+</h3>
+
+<a href="checkout.html"
+class="checkout-btn">
+
+ดำเนินการสั่งซื้อ
+
+</a>
+
+</div>
+
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
